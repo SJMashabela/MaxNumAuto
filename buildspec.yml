@@ -1,0 +1,68 @@
+version: 0.2
+
+run-as: Linux-user-name
+
+env:
+  shell: shell-tag
+  variables:
+
+  parameter-store:
+
+  exported-variables:
+
+  secrets-manager:
+    key:
+  git-credential-helper:
+
+proxy:
+  upload-artifacts:
+  logs:
+
+batch:
+  fast-fail:
+    # build-list:
+    # build-matrix:
+    # build-graph:
+
+phases:
+  install:
+    run-as:
+    on-failure:
+    runtime-versions:
+
+    commands:
+
+    finally:
+
+  pre_build:
+    run-as:
+    on-failure:
+    commands:
+      - mvn install
+    finally:
+
+  build:
+    run-as:
+    on-failure:
+    commands:
+
+    finally:
+
+  post_build:
+    run-as:
+    on-failure:
+    commands:
+
+    finally:
+
+reports:
+  report-group-name-or-arn:
+    files:
+
+    base-directory:
+    discard-paths:
+    file-format:
+
+cache:
+  paths:
+
