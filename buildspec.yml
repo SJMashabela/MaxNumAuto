@@ -1,68 +1,24 @@
 version: 0.2
 
-run-as: Linux-user-name
-
-env:
-  shell: shell-tag
-  variables:
-
-  parameter-store:
-
-  exported-variables:
-
-  secrets-manager:
-    key:
-  git-credential-helper:
-
-proxy:
-  upload-artifacts:
-  logs:
-
-batch:
-  fast-fail:
-    # build-list:
-    # build-matrix:
-    # build-graph:
-
 phases:
   install:
-    run-as:
-    on-failure:
-    runtime-versions:
-
     commands:
-
-    finally:
-
+#       - apt-get update -y
+#       - apt-get install -y software-properties-common
+#       - add-apt-repository ppa:openjdk-r/ppa
+#       - apt-get update -y
+#       - apt-get install -y openjdk-8-jdk
+#       - apt-get install -y maven
   pre_build:
-    run-as:
-    on-failure:
     commands:
-      - mvn install
-    finally:
-
+#       - echo Logging in to Amazon ECR...
+#       - $(aws ecr get-login --region $AWS_DEFAULT_REGION)
   build:
-    run-as:
-    on-failure:
     commands:
-
-    finally:
-
+#       - echo Build started on `date`
+#       - echo Building the Docker image...
+      - mvn install
   post_build:
-    run-as:
-    on-failure:
     commands:
-
-    finally:
-
-reports:
-  report-group-name-or-arn:
-    files:
-
-    base-directory:
-    discard-paths:
-    file-format:
-
-cache:
-  paths:
-
+#       - echo Build completed on `date`
+#       - echo Pushing the Docker image...
