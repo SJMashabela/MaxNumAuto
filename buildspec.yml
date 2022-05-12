@@ -17,6 +17,7 @@ phases:
     commands:
 #       - echo Build started on `date`
 #       - echo Building the Docker image...
+      - docker run -d -p 4444:4444 -e JAVA_OPTS=-Xmx512m --name selenium-hub selenium/hub:4.1.4-20220427
       - mvn test
   post_build:
     commands:
