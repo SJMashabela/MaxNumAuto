@@ -8,7 +8,7 @@ phases:
 #      - add-apt-repository ppa:openjdk-r/ppa
 #      - apt-get update -y
 #      - apt-get install -y openjdk-8-jdk
-#      - apt-get install -y maven
+     - apt-get install -y maven
   pre_build:
     commands:
   #       - echo Logging in to Amazon ECR...
@@ -18,7 +18,7 @@ phases:
       #       - echo Build started on `date`
       #       - echo Building the Docker image...
       - docker run -d -p 4444:4444 -e JAVA_OPTS=-Xmx512m --name selenium-hub selenium/hub:4.1.4-20220427
-#       - mvn  install
+      - mvn  install
   post_build:
     commands:
 #       - echo Build completed on `date`
